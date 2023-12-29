@@ -1,0 +1,22 @@
+  const getAvailableTimes = () => {
+    let availableTimes = [];
+  
+    if (event.eventcalendar === 'google') {
+      availableTimes = googleTimes.map((time) => ({
+        value: time, // Store the entire time object
+        label: `${time.start} - ${time.end}`,
+      }));
+    } else {
+      const day = selectedDate.toLocaleDateString('en-US', { weekday: 'long' });
+      const selectedDay = event?.scheduletimes?.find((schedule) => schedule.day === day);
+  
+      if (selectedDay) {
+        availableTimes = selectedDay.schedule_times.map((time) => ({
+          value: time, // Store the entire time object
+          label: `${time.start} - ${time.end}`,
+        }));
+      }
+    }
+  
+    return availableTimes;
+  };

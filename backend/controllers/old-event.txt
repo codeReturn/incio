@@ -1,0 +1,22 @@
+    if (location === 'zoom') {
+      const { accessToken, refreshToken } = user.socials.find((social) => social.platform === 'zoom');
+      const zoomEvent = {
+        name: name,
+        description: description,
+        questions: questions,
+        scheduletimes: scheduletimes
+      };
+      await createZoomEvent(accessToken, zoomEvent);
+    }
+
+    if (eventcalendar === 'google') {
+      const { accessToken, refreshToken } = user.socials.find((social) => social.platform === 'google');
+      const googleEvent = {
+        name: name,
+        description: description,
+        emails: emails,
+        questions: questions,
+        scheduletimes: scheduletimes
+      };
+      await createGoogleCalendarEvent(accessToken, googleEvent);
+    }
