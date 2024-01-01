@@ -26,7 +26,7 @@ const Verify = () => {
             setIsLoading(true)
 
             const response = await axios.post(
-                `https://inciohost.com/server/api/users/sendotp`,
+                `http://localhost:5000/server/api/users/sendotp`,
                 JSON.stringify({
                     phone: phone
                 }),
@@ -57,7 +57,7 @@ const Verify = () => {
             setIsLoading(true)
 
             const response = await axios.post(
-                `https://inciohost.com/server/api/users/verifyotp`,
+                `http://localhost:5000/server/api/users/verifyotp`,
                 JSON.stringify({
                     code: code
                 }),
@@ -94,7 +94,7 @@ const Verify = () => {
             setIsLoading(true)
 
             const response = await axios.post(
-                `https://inciohost.com/server/api/users/updateabout`,
+                `http://localhost:5000/server/api/users/updateabout`,
                 JSON.stringify({
                     name: name,
                     company: company,

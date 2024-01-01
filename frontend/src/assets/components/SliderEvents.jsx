@@ -26,7 +26,7 @@ const EventSlider = forwardRef((props, ref) => {
     setIsLoading(true);
 
     const response = await axios.get(
-      `https://inciohost.com/server/api/getuserevents`,
+      `http://localhost:5000/server/api/getuserevents`,
       {
         headers: {
           'Content-Type': 'application/json',

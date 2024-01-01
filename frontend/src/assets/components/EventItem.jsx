@@ -35,7 +35,7 @@ const EventItem = props => {
   const deleteEvent = async (id) => {
     try {
         setIsLoading(true)
-        const response = await axios.delete( `https://inciohost.com/server/api/eventdelete/${id}`, {
+        const response = await axios.delete( `http://localhost:5000/server/api/eventdelete/${id}`, {
           headers: {
               Authorization: 'Bearer ' + user.token
           }
@@ -137,7 +137,7 @@ const EventItem = props => {
     try {
       // Check if the user is already connected
       const checkResponse = await axios.get(
-        `https://inciohost.com/server/api/connect/check/${service}/${userId}`,
+        `http://localhost:5000/server/api/connect/check/${service}/${userId}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ const EventItem = props => {
       // If the user is not connected, open a new tab for authentication
       if (!checkResponse.data.isConnected) {
         const response = await axios.post(
-          `https://inciohost.com/server/api/connect/${service}`,
+          `http://localhost:5000/server/api/connect/${service}`,
           { userId },
           {
             headers: {
@@ -371,7 +371,7 @@ const EventItem = props => {
       setIsLoading(true)
       
       const response = await axios.post(
-        `https://inciohost.com/server/api/eventupdate`,
+        `http://localhost:5000/server/api/eventupdate`,
         { event: eventObj },
         {
           headers: {

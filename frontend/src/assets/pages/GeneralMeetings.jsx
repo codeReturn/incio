@@ -36,7 +36,7 @@ const GeneralMeetings = () => {
         try {
           setIsLoading(true)
 
-          const response = await axios.get(`https://inciohost.com/server/api/getevents?page=1`, 
+          const response = await axios.get(`http://localhost:5000/server/api/getevents?page=1`, 
           {
               headers: {
                   'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const GeneralMeetings = () => {
         try {
           setIsLoading(true)
 
-          const response = await axios.get(`https://inciohost.com/server/api/getmeetings?page=1`, 
+          const response = await axios.get(`http://localhost:5000/server/api/getmeetings?page=1`, 
           {
               headers: {
                   'Content-Type': 'application/json',

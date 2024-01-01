@@ -244,7 +244,7 @@ const NewContract = (props) => {
       setIsLoading(true);
 
       const response = await axios.post(
-        'https://inciohost.com/server/api/createcontract',
+        'http://localhost:5000/server/api/createcontract',
         {
           formData: formData,
           title: contractTitle,
@@ -284,7 +284,7 @@ const NewContract = (props) => {
       const formData = new FormData();
       formData.append('file', file);
   
-      axios.post('https://inciohost.com/server/api/convert', formData, {
+      axios.post('http://localhost:5000/server/api/convert', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: 'Bearer ' + user.token,

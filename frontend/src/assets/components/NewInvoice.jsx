@@ -63,7 +63,7 @@ const NewInvoice = (props) => {
     try {
       // Check if the user is already connected
       const checkResponse = await axios.get(
-        `https://inciohost.com/server/api/connect/check/${service}/${userId}`,
+        `http://localhost:5000/server/api/connect/check/${service}/${userId}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const NewInvoice = (props) => {
       // If the user is not connected, open a new tab for authentication
       if (!checkResponse.data.isConnected) {
         const response = await axios.post(
-          `https://inciohost.com/server/api/connect/${service}`,
+          `http://localhost:5000/server/api/connect/${service}`,
           { userId },
           {
             headers: {
@@ -123,7 +123,7 @@ const NewInvoice = (props) => {
         setIsLoading(true)
         
         const response = await axios.post(
-          `https://inciohost.com/server/api/connect/stripe/createinvoice`,
+          `http://localhost:5000/server/api/connect/stripe/createinvoice`,
           { 
             invoicename: invoiceName,
             invoicedescription: invoiceDescription,

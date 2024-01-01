@@ -23,7 +23,7 @@ const ClientItem = props => {
     const deleteClient = async (id) => {
         try {
             setIsLoading(true)
-            const response = await axios.delete( `https://inciohost.com/server/api/clientdelete/${id}`, {
+            const response = await axios.delete( `http://localhost:5000/server/api/clientdelete/${id}`, {
               headers: {
                   Authorization: 'Bearer ' + user.token
               }
@@ -150,7 +150,7 @@ const ClientItem = props => {
           setIsLoading(true);
       
           const response = await axios.post(
-            "https://inciohost.com/server/api/updateclient",
+            "http://localhost:5000/server/api/updateclient",
             formData,
             {
               headers: {
@@ -177,7 +177,7 @@ const ClientItem = props => {
         try {
             setIsLoading(true)
             const response = await axios.get(
-                `https://inciohost.com/server/api/getclient/${props.id}`,
+                `http://localhost:5000/server/api/getclient/${props.id}`,
                 {
                   headers: {
                     'Content-Type': 'application/json',
@@ -290,7 +290,7 @@ const ClientItem = props => {
                   <Row>
                     <Col xs={3}>
                             <div className="image-upload__preview position-relative">              
-                                <img src={`https://inciohost.com/server/` + selectedImage} alt="Preview" className="mt-2" />
+                                <img src={`http://localhost:5000/server/` + selectedImage} alt="Preview" className="mt-2" />
                             </div>
                     </Col>
                     <Col xs={9}>
@@ -683,7 +683,7 @@ const ClientItem = props => {
                                                 <div className={`image-upload ${props.center && 'center'}`}>
                                                     <div className="image-upload__preview position-relative">
                                                 
-                                                    <img src={`https://inciohost.com/server/` + selectedImage} alt="Preview" className="mt-2" />
+                                                    <img src={`http://localhost:5000/server/` + selectedImage} alt="Preview" className="mt-2" />
 
                                                     </div>
                                                 </div>
@@ -741,7 +741,7 @@ const ClientItem = props => {
             <Row>
                 <Col xs={3}>
                         <div className="image-upload__preview position-relative">              
-                             <img src={`https://inciohost.com/server/` + selectedImage} alt="Preview" className="mt-2" />
+                             <img src={`http://localhost:5000/server/` + selectedImage} alt="Preview" className="mt-2" />
                         </div>
                 </Col>
                 <Col xs={5}>

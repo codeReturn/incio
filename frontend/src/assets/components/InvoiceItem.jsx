@@ -35,7 +35,7 @@ const InvoiceItem = props => {
               setIsLoading(true);
           
               const response = await axios.post(
-                "https://inciohost.com/server/api/connect/stripe/resendinvoice",
+                "http://localhost:5000/server/api/connect/stripe/resendinvoice",
                 {
                     invoiceId: props.id
                 },
@@ -63,7 +63,7 @@ const InvoiceItem = props => {
     const downloadInvoice = async () => {
       try {
         const response = await axios.get(
-          `https://inciohost.com/server/api/downloadinvoice/${props.id}`,
+          `http://localhost:5000/server/api/downloadinvoice/${props.id}`,
           {
             headers: {
               'Content-Type': 'application/json',

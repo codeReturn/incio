@@ -30,7 +30,7 @@ const DashboardStats = () => {
         try {
             setUserStatsLoading(true)
 
-            const response = await axios.get(`https://inciohost.com/server/api/getuserstatsdashboard`, {
+            const response = await axios.get(`http://localhost:5000/server/api/getuserstatsdashboard`, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: 'Bearer ' + user.token

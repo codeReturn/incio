@@ -57,7 +57,7 @@ const Account = () => {
     const fetchUser = async () => {
         try {
             setIsLoading(true)
-            const response = await axios.get(`https://inciohost.com/server/api/users/getuserinfo`, 
+            const response = await axios.get(`http://localhost:5000/server/api/users/getuserinfo`, 
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ const Account = () => {
           setIsLoading(true);
       
           const response = await axios.post(
-            "https://inciohost.com/server/api/updateaccount",
+            "http://localhost:5000/server/api/updateaccount",
             formData,
             {
               headers: {
@@ -241,7 +241,7 @@ const Account = () => {
                                                 
                                                     {selectedImage ? (
                                                         <>
-                                                        <img src={`https://inciohost.com/server/` + selectedImage} alt="Preview" className="mt-2" />
+                                                        <img src={`http://localhost:5000/server/` + selectedImage} alt="Preview" className="mt-2" />
                                                         </>
                                                     ) : (
                                                         <>

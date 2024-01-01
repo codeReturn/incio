@@ -64,7 +64,7 @@ const Account = () => {
     const fetchUser = async () => {
         try {
             setIsLoading(true)
-            const response = await axios.get(`https://inciohost.com/server/api/users/getuserinfo`, 
+            const response = await axios.get(`http://localhost:5000/server/api/users/getuserinfo`, 
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -171,7 +171,7 @@ const Account = () => {
           setIsLoading(true);
       
           const response = await axios.post(
-            "https://inciohost.com/server/api/updateaccount",
+            "http://localhost:5000/server/api/updateaccount",
             formData,
             {
               headers: {
@@ -223,7 +223,7 @@ const Account = () => {
     const removeSocial = async (platform) => {
         try {
             const response = await axios.post(
-                'https://inciohost.com/server/api/connect/deletesocial',
+                'http://localhost:5000/server/api/connect/deletesocial',
                 { platform: platform },
                 {
                   headers: {
@@ -259,7 +259,7 @@ const Account = () => {
         try {
           // Check if the user is already connected
           const checkResponse = await axios.get(
-            `https://inciohost.com/server/api/connect/check/${service}/${userId}`,
+            `http://localhost:5000/server/api/connect/check/${service}/${userId}`,
             {
               headers: {
                 'Content-Type': 'application/json',
@@ -270,7 +270,7 @@ const Account = () => {
       
           // If the user is not connected, open a new tab for authentication
             const response = await axios.post(
-              `https://inciohost.com/server/api/connect/${service}`,
+              `http://localhost:5000/server/api/connect/${service}`,
               { userId },
               {
                 headers: {
@@ -405,7 +405,7 @@ const Account = () => {
                                                 
                                                     {selectedImage ? (
                                                         <>
-                                                        <img src={`https://inciohost.com/server/` + selectedImage} alt="Preview" className="mt-2" />
+                                                        <img src={`http://localhost:5000/server/` + selectedImage} alt="Preview" className="mt-2" />
                                                         </>
                                                     ) : (
                                                         <>

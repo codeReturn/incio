@@ -100,7 +100,7 @@ const NewEvent = props => {
     try {
       // Check if the user is already connected
       const checkResponse = await axios.get(
-        `https://inciohost.com/server/api/connect/check/${service}/${userId}`,
+        `http://localhost:5000/server/api/connect/check/${service}/${userId}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const NewEvent = props => {
       // If the user is not connected, open a new tab for authentication
       if (!checkResponse.data.isConnected) {
         const response = await axios.post(
-          `https://inciohost.com/server/api/connect/${service}`,
+          `http://localhost:5000/server/api/connect/${service}`,
           { userId },
           {
             headers: {
@@ -374,7 +374,7 @@ const NewEvent = props => {
       setIsLoading(true)
       
       const response = await axios.post(
-        `https://inciohost.com/server/api/eventcreate`,
+        `http://localhost:5000/server/api/eventcreate`,
         { event: eventObj },
         {
           headers: {

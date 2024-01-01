@@ -182,7 +182,7 @@ const InvoiceStats = (props) => {
 
     try {
       setGraphLoading(true);
-      const response = await axios.get('https://inciohost.com/server/api/connect/getstripestats', {
+      const response = await axios.get('http://localhost:5000/server/api/connect/getstripestats', {
         params: {
           timeRange: timeRange === 'all' ? 'custom' : timeRange, // Send 'custom' if 'all' is selected
           startDate: calculatedStartDate,

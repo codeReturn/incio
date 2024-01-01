@@ -92,7 +92,7 @@ const App = () => {
 
   const fetchUser = async () => {
       try {
-          const response = await axios.get(`https://inciohost.com/server/api/users/getuserinfo`, 
+          const response = await axios.get(`http://localhost:5000/server/api/users/getuserinfo`, 
           {
               headers: {
                   'Content-Type': 'application/json',

@@ -47,7 +47,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'https://inciohost.com/server/api/users/google/callback'
+      callbackURL: 'http://localhost:5000/server/api/users/google/callback'
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -80,7 +80,7 @@ passport.use(
     {
       clientID: process.env.LINKEDIN_CLIENT_ID,
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
-      callbackURL: 'https://inciohost.com/server/api/users/linkedin/callback',
+      callbackURL: 'http://localhost:5000/server/api/users/linkedin/callback',
       scope: ['openid', 'profile', 'email']
     },
     async (accessToken, refreshToken, done) => {

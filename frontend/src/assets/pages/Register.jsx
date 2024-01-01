@@ -33,7 +33,7 @@ const Register = () => {
 
         try {
             const responseData = await sendRequest(
-              'https://inciohost.com/server/api/users/signup',
+              'http://localhost:5000/server/api/users/signup',
               'POST',
               JSON.stringify({
                 email: email,
@@ -60,11 +60,11 @@ const Register = () => {
     }
 
     const handleGoogleRegister = () => {
-        window.location.href = 'https://inciohost.com/server/api/users/google';
+        window.location.href = 'http://localhost:5000/server/api/users/google';
     };
       
     const handleLinkedInRegister = () => {
-        window.location.href = 'https://inciohost.com/server/api/users/linkedin';
+        window.location.href = 'http://localhost:5000/server/api/users/linkedin';
     };
 
     const [viewPassword, setViewPassword] = useState(false);

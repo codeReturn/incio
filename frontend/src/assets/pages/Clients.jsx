@@ -35,7 +35,7 @@ const Clients = () => {
         try {
           setIsLoading(true)
 
-          const response = await axios.get(`https://inciohost.com/server/api/getclients?page=1&status=${status}`, 
+          const response = await axios.get(`http://localhost:5000/server/api/getclients?page=1&status=${status}`, 
           {
               headers: {
                   'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const Clients = () => {
 
             try {
               setIsLoading(true)
-              const response = await axios.get(`https://inciohost.com/server/api/getclients?page=${page}&status=${status}`, 
+              const response = await axios.get(`http://localhost:5000/server/api/getclients?page=${page}&status=${status}`, 
               {
                   headers: {
                       'Content-Type': 'application/json',

@@ -126,7 +126,7 @@ const NewClient = (props) => {
             setIsLoading(true)
     
             const response = await axios.post(
-                "https://inciohost.com/server/api/createclient",
+                "http://localhost:5000/server/api/createclient",
                 formData,
                 {
                     headers: {

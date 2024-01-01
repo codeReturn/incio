@@ -26,7 +26,7 @@ const Contract = () => {
         try {
             setIsLoading(true)
             const response = await axios.get(
-                `https://inciohost.com/server/api/getcontract/${id}`,
+                `http://localhost:5000/server/api/getcontract/${id}`,
                 {
                   headers: {
                     'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const Contract = () => {
 
         try {
             const response = await axios.post(
-                "https://inciohost.com/server/api/signcontract",
+                "http://localhost:5000/server/api/signcontract",
                 {
                   signature: signaturePadRef.current.toDataURL(),
                   id: id,
@@ -120,7 +120,7 @@ const Contract = () => {
     const downloadPDF = async () => {
         try {
           const response = await axios.get(
-            `https://inciohost.com/server/api/downloadcontract/${id}`,
+            `http://localhost:5000/server/api/downloadcontract/${id}`,
             {
               headers: {
                 'Content-Type': 'application/json',

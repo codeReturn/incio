@@ -34,7 +34,7 @@ const Login = () => {
 
         try {
             const responseData = await sendRequest(
-              'https://inciohost.com/server/api/users/login',
+              'http://localhost:5000/server/api/users/login',
               'POST',
               JSON.stringify({
                 email: email,
@@ -62,11 +62,11 @@ const Login = () => {
     }
 
     const handleGoogleLogin = () => {
-        window.location.href = 'https://inciohost.com/server/api/users/google';
+        window.location.href = 'http://localhost:5000/server/api/users/google';
     };
       
     const handleLinkedInLogin = () => {
-        window.location.href = 'https://inciohost.com/server/api/users/linkedin';
+        window.location.href = 'http://localhost:5000/server/api/users/linkedin';
     };
 
     const [viewPassword, setViewPassword] = useState(false);

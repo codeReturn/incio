@@ -22,7 +22,7 @@ const Meeting = () => {
   const fetchEvent = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`https://inciohost.com/server/api/getevent/${link}`);
+      const response = await axios.get(`http://localhost:5000/server/api/getevent/${link}`);
       setEvent(response.data.event);
       setIsLoading(false);
     } catch (err) {
@@ -247,7 +247,7 @@ const Meeting = () => {
     adjustedDate.setDate(adjustedDate.getDate() + 1);
   
     try {
-      const response = await fetch('https://inciohost.com/server/api/connect/calendar/freedays', {
+      const response = await fetch('http://localhost:5000/server/api/connect/calendar/freedays', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -319,7 +319,7 @@ const Meeting = () => {
       setIsLoading(true);
   
       const response = await axios.post(
-        `https://inciohost.com/server/api/meetingconfirm`,
+        `http://localhost:5000/server/api/meetingconfirm`,
         { meeting: meetingObj },
         {
           headers: {

@@ -29,7 +29,7 @@ const Meetings = () => {
         try {
           setIsLoading(true)
 
-          const response = await axios.get(`https://inciohost.com/server/api/getmeetings?page=1`, 
+          const response = await axios.get(`http://localhost:5000/server/api/getmeetings?page=1`, 
           {
               headers: {
                   'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const Meetings = () => {
 
             try {
               setIsLoading(true)
-              const response = await axios.get(`https://inciohost.com/server/api/getmeetings?page=${page}`, 
+              const response = await axios.get(`http://localhost:5000/server/api/getmeetings?page=${page}`, 
               {
                   headers: {
                       'Content-Type': 'application/json',

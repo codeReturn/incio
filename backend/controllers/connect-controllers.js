@@ -26,14 +26,14 @@ let transporter = nodemailer.createTransport({
 });
 
 const getZoomAuthUrl = (userId) => {
-  const redirectUri = 'https://inciohost.com/server/api/connect/zoom/callback';
+  const redirectUri = 'http://localhost:5000/server/api/connect/zoom/callback';
   const state = userId;
   const authUrl = `https://zoom.us/oauth/authorize?response_type=code&client_id=${process.env.ZOOM_CLIENT_ID}&redirect_uri=${redirectUri}&state=${state}`;
   return authUrl;
 };
 
 const getGoogleAuthUrl = (userId) => {
-  const redirectUri = 'https://inciohost.com/server/api/connect/google/callback';
+  const redirectUri = 'http://localhost:5000/server/api/connect/google/callback';
   const scope = 'https://www.googleapis.com/auth/calendar.events';
   const state = userId;
   const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&access_type=offline&prompt=consent&state=${state}`;
@@ -41,7 +41,7 @@ const getGoogleAuthUrl = (userId) => {
 };
 
 const getStripeAuthUrl = (userId) => {
-  const redirectUri = 'https://inciohost.com/server/api/connect/stripe/callback';
+  const redirectUri = 'http://localhost:5000/server/api/connect/stripe/callback';
   const state = userId;
   const authUrl = `https://connect.stripe.com/oauth/authorize?response_type=code&client_id=${process.env.STRIPE_CLIENT_ID}&scope=read_write&redirect_uri=${redirectUri}&state=${state}`;
   return authUrl;
@@ -77,7 +77,7 @@ const zoomCallback = async (req, res, next) => {
       params: {
         code,
         grant_type: 'authorization_code',
-        redirect_uri: 'https://inciohost.com/server/api/connect/zoom/callback',
+        redirect_uri: 'http://localhost:5000/server/api/connect/zoom/callback',
         client_id: process.env.ZOOM_CLIENT_ID,
         client_secret: process.env.ZOOM_CLIENT_SECRET,
       },
@@ -127,7 +127,7 @@ const googleCallback = async (req, res, next) => {
       params: {
         code,
         grant_type: 'authorization_code',
-        redirect_uri: 'https://inciohost.com/server/api/connect/google/callback',
+        redirect_uri: 'http://localhost:5000/server/api/connect/google/callback',
         client_id: process.env.GOOGLE_CLIENT_ID,
         client_secret: process.env.GOOGLE_CLIENT_SECRET,
       },

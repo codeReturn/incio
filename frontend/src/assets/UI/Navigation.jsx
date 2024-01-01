@@ -31,7 +31,7 @@ const Navigation = () => {
     const [user, setUser] = useState()
     const fetchUser = async () => {
         try {
-            const response = await axios.get(`https://inciohost.com/server/api/users/getuserinfo`, 
+            const response = await axios.get(`http://localhost:5000/server/api/users/getuserinfo`, 
             {
                 headers: {
                     'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ const Navigation = () => {
                 <Nav className="ml-auto mobile-display">
                     <Nav.Link href="/"><img src={notificationImage} className="img-fluid notfico" /></Nav.Link> 
 
-                    <Link to="/account"><img src={user?.image ? `https://inciohost.com/server/${user?.image}` : avatarImage} alt="Picture" className="img-fluid main-avatar" /></Link>
+                    <Link to="/account"><img src={user?.image ? `http://localhost:5000/server/${user?.image}` : avatarImage} alt="Picture" className="img-fluid main-avatar" /></Link>
                 </Nav>
                 </>
             ) : (
@@ -183,7 +183,7 @@ const Navigation = () => {
 
                     <Nav.Link href="/"><img src={notificationImage} className="img-fluid notfico" /></Nav.Link>
 
-                    <NavDropdown title={<img src={user?.image ? `https://inciohost.com/server/${user?.image}` : avatarImage} alt="Picture" className="img-fluid main-avatar" />} id="collasible-nav-dropdown" className="custom-dropdown">
+                    <NavDropdown title={<img src={user?.image ? `http://localhost:5000/server/${user?.image}` : avatarImage} alt="Picture" className="img-fluid main-avatar" />} id="collasible-nav-dropdown" className="custom-dropdown">
                         <NavDropdown.Item>
                             <Link to="/account">Account</Link>
                         </NavDropdown.Item>

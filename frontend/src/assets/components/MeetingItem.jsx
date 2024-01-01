@@ -28,7 +28,7 @@ const MeetingItem = (props) => {
     const deleteMeeting = async (id) => {
       try {
           setIsLoading(true)
-          const response = await axios.delete( `https://inciohost.com/server/api/meetingdelete/${id}`, {
+          const response = await axios.delete( `http://localhost:5000/server/api/meetingdelete/${id}`, {
             headers: {
                 Authorization: 'Bearer ' + user.token
             }
@@ -62,7 +62,7 @@ const MeetingItem = (props) => {
       setIsLoading(true);
   
       const response = await axios.post(
-        'https://inciohost.com/server/api/connect/zoom/remove',
+        'http://localhost:5000/server/api/connect/zoom/remove',
         { meetingId: id, dbId: props.id },
         {
           headers: {
@@ -93,7 +93,7 @@ const MeetingItem = (props) => {
 
     try {
       const response = await axios.post(
-        'https://inciohost.com/server/api/connect/zoom/reschedule',
+        'http://localhost:5000/server/api/connect/zoom/reschedule',
         {
           meetingId: props.selected_time.zoomEventId,
           newDateTime: newDate + 'T' + newStartTime,

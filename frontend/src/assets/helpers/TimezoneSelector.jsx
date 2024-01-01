@@ -13,7 +13,7 @@ const TimezoneSelector = ({ userId, onUpdate }) => {
 
   const getTimezones = async () => {
     try {
-      const response = await axios.get('https://inciohost.com/server/api/users/alltimezones');
+      const response = await axios.get('http://localhost:5000/server/api/users/alltimezones');
       const timezoneOptions = response.data.map((tz) => ({
         value: tz,
         label: tz,
@@ -33,7 +33,7 @@ const TimezoneSelector = ({ userId, onUpdate }) => {
   const parseLocal = JSON.parse(localData)
 
   const fetchUserInfo = async () => {
-    await axios.get(`https://inciohost.com/server/api/users/getuserinfo`, 
+    await axios.get(`http://localhost:5000/server/api/users/getuserinfo`, 
     {
         headers: {
             'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const TimezoneSelector = ({ userId, onUpdate }) => {
     // Update the user's preference if userId is defined
     if (userId) {
       try {
-        const response = await axios.post('https://inciohost.com/server/api/users/updatetimezone', {
+        const response = await axios.post('http://localhost:5000/server/api/users/updatetimezone', {
           userId,
           timezone: selectedOption.value,
         });

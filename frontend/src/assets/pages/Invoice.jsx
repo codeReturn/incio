@@ -29,7 +29,7 @@ const PaymentForm = ({ invoiceId, userToken, handleSuccess, stripeInvoiceId, ema
       });
 
       const response = await axios.post(
-        `https://inciohost.com/server/api/connect/payinvoice/${invoiceId}`,
+        `http://localhost:5000/server/api/connect/payinvoice/${invoiceId}`,
         {
           paymentMethodId: paymentMethod.id,
           receipt_email: email,
@@ -77,7 +77,7 @@ const Invoice = () => {
 
   const fetchInvoice = async () => {
     try {
-      const response = await axios.get(`https://inciohost.com/server/api/getinvoice/${id}`, {
+      const response = await axios.get(`http://localhost:5000/server/api/getinvoice/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + user.token,
@@ -117,7 +117,7 @@ const Invoice = () => {
 
   const downloadInvoice = async () => {
     try {
-      const response = await axios.get(`https://inciohost.com/server/api/downloadinvoice/${id}`, {
+      const response = await axios.get(`http://localhost:5000/server/api/downloadinvoice/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + user.token,
